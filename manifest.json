@@ -1,0 +1,9 @@
+{
+  "name": "Breathe",
+  "short_name": "Breathe",
+  "theme_color": "#bf63a7",
+  "background_color": "#5eadf2",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/"
+}
