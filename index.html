@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Breathe</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="manifest" href="/manifest.json">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.2/iconfont/material-icons.min.css"
+        rel="stylesheet">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -38,19 +40,32 @@ pause_circle_outline
 </div>
 
 <audio id="natureSounds" loop>
-  <source src="https://ia800404.us.archive.org/31/items/naturesounds-soundtheraphy/Light%20Gentle%20Rain.mp3" type="audio/mpeg">
+  <source src="/audio/rain.mp3"
+          type="audio/mpeg">
 </audio>
 
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+<audio id="bell">
+  <source src="/audio/bell.mp3"
+          type="audio/mpeg">
+</audio>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DWRE2K3Z8S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-DWRE2K3Z8S');
+</script>
 </body>
 
 </html>

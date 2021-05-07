@@ -4,6 +4,7 @@ let message = document.getElementById("message");
 let counter = document.getElementById("counter");
 let container = document.getElementById("container");
 let natureSounds = document.getElementById("natureSounds");
+let bell = document.getElementById("bell");
 
 let isPaused = false;
 
@@ -11,22 +12,22 @@ let meditationStates = [
   {
     message: "Just Inhale",
     seconds: 4,
-    color: { r: 94, g: 173, b: 242 }
+    color: {r: 94, g: 173, b: 242}
   },
   {
     message: "Hold",
     seconds: 4,
-    color: { r: 85, g: 166, b: 3 }
+    color: {r: 85, g: 166, b: 3}
   },
   {
     message: "Exhale",
     seconds: 6,
-    color: { r: 217, g: 174, b: 121 }
+    color: {r: 217, g: 174, b: 121}
   },
   {
     message: "Hold",
     seconds: 4,
-    color: { r: 191, g: 99, b: 167 }
+    color: {r: 191, g: 99, b: 167}
   }
 ];
 
@@ -38,7 +39,7 @@ let getCurrentState = () => meditationStates[stateIndex];
 
 let nextState = () => {
   stateIndex++;
-  if (stateIndex == states.length) {
+  if (stateIndex === states.length) {
     stateIndex = 0;
   }
 };
@@ -49,10 +50,9 @@ counter.innerHTML = seconds;
 message.innerHTML = getCurrentState().message;
 
 
-
 let getNextState = () => {
   let nextIndex = stateIndex + 1;
-  if (nextIndex == states.length) {
+  if (nextIndex === states.length) {
     nextIndex = 0;
   }
   return meditationStates[nextIndex];
@@ -87,7 +87,7 @@ let increaseSeconds = () => {
     seconds--;
   }
 
-  if (seconds == 0) {
+  if (seconds === 0) {
     seconds = getNextState().seconds;
     hold();
     nextState()
@@ -105,6 +105,7 @@ let timer;
 
 play.onclick = () => {
   natureSounds.play();
+  bell.play();
   hide(play);
   show(pause);
   isPaused = false;
@@ -120,6 +121,7 @@ play.onclick = () => {
 
 pause.onclick = () => {
   natureSounds.pause();
+  bell.pause();
   hide(pause);
   show(play);
   isPaused = true;
@@ -128,7 +130,9 @@ pause.onclick = () => {
 
 let hold = () => {
   clearInterval(timer);
-  setTimeout(function(){  timer = setInterval(increaseSeconds, 1000); }, 500);
+  setTimeout(function () {
+    timer = setInterval(increaseSeconds, 1000);
+  }, 500);
 }
 
 let lerp = function (a, b, u) {
