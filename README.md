@@ -13,3 +13,5 @@ To-do:
 3. Silence icon-button
 4. Settings to change seconds
 5. Settings to change colors
+6. Settings to display timers etc.
+7. Hide everything
