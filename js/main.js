@@ -21,7 +21,7 @@ let meditationStates = [
   },
   {
     message: "Exhale",
-    seconds: 6,
+    seconds: 4,
     color: {r: 217, g: 174, b: 121}
   },
   {
