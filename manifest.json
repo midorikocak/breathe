@@ -1,5 +1,12 @@
 {
- "name": "App",
+  "theme_color": "#bf63a7",
+  "background_color": "#5eadf2",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Breathe",
+  "short_name": "Breathe",
+  "description": "A small meditation app",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
